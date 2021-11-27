@@ -1,0 +1,427 @@
+/* //////////////////// THIS IS ALL MY GOOGLE FONT STUFF & OTHER DESIGN STUFF */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom Properties, update these for design if needed */
+
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+    
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/*////////////////////////////////// General styles */
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ////////////////////////////////////// Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+.section__title {
+   margin-bottom: .25em;
+}
+
+.section__title--intro {
+   font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+   display: block;
+}
+
+.section__subtitle {
+   margin: 0;
+   font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+   background: var(--clr-accent);
+   font-family: var(--ff-secondary);
+}
+
+
+.section__subtitle--work {
+   color: var(--clr-accent);
+   font-weight: var(--fw-bold);
+   margin-bottom: 2em;
+}
+
+
+/*///////////////////// BELOW HERE IS CSS FOR MY HAMBURGER MENU //////////////////////*/
+
+#header ul li a {
+   color: #252525;
+   display: inline-block;
+   font-family: "Arial Black", Gadget, sans-serif;
+   font-size: 14px;
+   font-weight: normal;
+   margin: 0;
+   padding: 0 0 3px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+body{
+   font-family: 'PT Sans',sans-serif;
+   
+}
+#menu{
+   width: 35px;
+   height: 30px;
+   margin: 30px 0 20px 20px;
+   cursor: pointer;
+}
+.bar{
+   height: 5px;
+   width: 100%;
+   background-color: #252525;
+   display: block;
+   border-radius: 5px;
+   transition: 0.3s ease;
+}
+#bar1{
+   transform: translateY(-4px);
+}
+#bar3{
+   transform: translateY(4px);
+}
+.nav li a{
+   color: #fff;
+   text-decoration: none;
+}
+.nav li a:hover{
+   font-weight: bold;
+}
+.nav li{
+   list-style: none;
+   padding: 16px 0;
+}
+.nav{
+   padding: 0;
+   margin: 0 20px;
+   transition: 0.3s ease;
+   display: none;
+}
+.menu-bg, #menu-bar{
+   top: 0;
+   left: 0;
+   position: absolute;
+}
+.menu-bg{
+   z-index: 1;
+   width: 0;
+   height: 0;
+   margin: 30px 0 20px 20px;
+   background: radial-gradient(circle,#252525,#252525);
+   border-radius: 50%;
+   transition: 0.3s ease;
+}
+#menu-bar{
+   z-index: 2;	
+}
+.change-bg{
+   width: 550px;
+   height: 540px;
+   transform: translate(-60%,-30%);
+}
+.change .bar{
+   background-color: white;
+}
+.change #bar1{
+   transform: translateY(4px) rotateZ(-45deg);
+}
+.change #bar3{
+   transform: translateY(-6px) rotate(45deg);
+}
+.change #bar2{
+   opacity: 0;
+}
+.change{
+   display: block;
+}
+
+
+
+/* ///////////////////////////// THE REST AFTER HAMBURGER ////////// */
+
+/* /////////////////////////////////  header */
+
+
+
+
+
+/*  Intro section  */
+
+.intro {
+   position: relative;
+}
+
+.intro__img {
+   box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+   display: inline-block;
+}
+
+@media (min-width: 600px) {
+   .intro {
+       display: grid;
+       width: min-content;
+       margin: 0 auto;
+       grid-column-gap: 1em;
+       grid-template-areas: 
+           "img title"
+           "img subtitle";
+       grid-template-columns: min-content max-content;
+   }
+   
+   .intro__img {
+       grid-area: img;
+       min-width: 250px;
+       position: relative;
+       z-index: 2;
+   }    
+   
+   .section__subtitle--intro {
+       align-self: start;
+       grid-column: -1 / 1;
+       grid-row: 2;
+       text-align: right;
+       position: relative;
+       left: -1.5em;
+       width: calc(100% + 1.5em);
+   }
+}
+
+/* ///////////////////////////// MY SERVICES SECTION ///////////////////////*/
+
+.my-services {
+   background-color: var(--clr-dark);
+   background-image: url(../img/services-bg.jpg);
+   background-size: cover;
+   /* background-blend-mode: multiply; */
+   color: var(--clr-light);
+   text-align: center;
+}
+
+.section__title--services {
+   color: var(--clr-accent);
+   position: relative;
+}
+
+.section__title--services::after {
+   content: '';
+   display: block;
+   width: 2em;
+   height: 1px;
+   margin: 0.5em auto 1em;
+   background: var(--clr-light);
+   opacity: 0.25;
+}
+
+.services {
+   margin-bottom: 4em;
+}
+
+.service {
+   max-width: 500px;
+   margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+   .services {
+       display: flex;
+       max-width: 1000px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+   
+   .service + .service {
+       margin-left: 2em;
+   }
+}
+
+/* ////////////////////////////// ABOUT ME /////////////////*/
+
+.about-me {
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+.about-me__img {
+   box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+   .about-me {
+       display: grid;
+       grid-template-columns: 1fr 200px;
+       grid-template-areas: 
+           "title img"
+           "subtitle img"
+           "text img";
+       grid-column-gap: 2em;
+   }
+   
+   .section__title--about {
+       grid-area: title;
+   }
+   
+   .section__subtitle--about {
+       grid-column: 1 / -1;
+       grid-row: 2;
+       position: relative;
+       left: -1em;
+       width: calc(100% + 2em);
+       padding-left: 1em;
+       padding-right: calc(200px + 4em);
+   }
+   
+   .about-me__img {
+       grid-area: img;
+       position: relative;
+       z-index: 2;
+   }
+}
+
+/*/////////////////////////////////////  My Work */
+
+.my-work {
+   background-color: var(--clr-dark);
+   color: var(--clr-light);
+   text-align: center;    
+}
+
+.portfolio {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.portfolio__item {
+   background: var(--clr-accent);
+   overflow: hidden;
+}
+
+.portfolio__img {
+   transition: 
+       transform 750ms cubic-bezier(.5, 0, .5, 1),
+       opacity 250ms linear;
+}
+
+.portfolio__item:focus {
+   position: relative;
+   z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+   transform: scale(1.2);
+   opacity: .5;
+}
+
+
+/* ///////////// BELOW HERE IS CSS FOR THE FOOTER //////////////////////// */
+
+.footer-basic {
+	padding:40px 0;
+	background-color:#000000;
+  }
+  @media only screen and (min-device-height: 600px) and (max-device-height: 1400px) and (max-width: 1050px) and (min-device-width: 300px){
+	.footer-basic .social {
+	  text-align:center;
+	  padding-bottom:25px;
+	}
+  }
+  .footer-basic .social {
+	text-align:center;
+	padding-bottom:25px;
+  }
+  .section__title_section__title--intro {
+      text-align: right;
+  }
+  @media only screen and (min-device-height: 600px) and (max-device-height: 1400px) and (max-width: 1024px) and (min-device-width: 300px){
+	.social > a {
+	  font-size:24px;
+	  width:40px;
+	  height:40px;
+	  line-height:40px;
+	  display:inline-block;
+	  text-align:center;
+	  border-radius:50%;
+	  margin:0px 8px auto 20px;
+	  
+	}
+    .section__title_section__title--intro {
+        text-align: right;
+    }
+  }
+  .social > a {
+	font-size:24px;
+	width:40px;
+	height:40px;
+	line-height:40px;
+	display:inline-block;
+	text-align:center;
+	border-radius:50%;
+	margin:0px 8px auto 20px;
+	
+  }
+  
+  
+  .footer-basic .social > a:hover {
+	opacity:0.9;
+  }
+  
+  a {
+      font-weight: 700;
+      color: rgb(245, 236, 236);
+  }
